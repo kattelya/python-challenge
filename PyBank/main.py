@@ -1,0 +1,62 @@
+"""PyBank Homework Solution."""
+
+#import required packages 
+import csv 
+import os 
+
+#Files to load and output
+file_to_load = os.path.join( "budget_data.csv")
+file_to_output = os.path.join("Financial_Analysis.txt")
+
+#Placeholders for re-formatted contents 
+months_total = []
+total_value = []
+avg_change = []
+
+#Read the csv file and skip the header - class discussion
+with open(file_to_load) as budget_data:
+    reader = csv.reader(budget_data, delimiter =",")
+    header = next(reader)
+
+#Loop through each row, re-grab each filed and store in a new list - class discussion
+    for row in reader:
+        months_total.append(row[0])
+        total_value.append(row[1])
+    #how many months the report hold use len function to find the length of the list
+    months = len(months_total)
+    #since the list that we copy is a string, need to convert string to an integer before we can perform any calculations.
+    total_value = [int(i)for i in total_value]
+    total = sum(total_value)
+
+# Loop through the entire length specificly on total_revenue and manipulate using their index in order to perform a fast computation - stackoverflow 
+    for i in range(1, len(total_value)):
+        avg_change.append(total_value[i] - total_value[i-1])
+        average = round((sum(avg_change) / len(avg_change)), 2)
+        max_val_change = max(avg_change)
+        min_val_change = min(avg_change)
+
+# to read from months_total list using the .index build in function in python and with specific value that match max or min - concept taken from geeksforgeeks    
+    max_val_change_date = str(months_total[avg_change.index(max(avg_change))])
+    min_val_change_date = str(months_total[avg_change.index(min(avg_change))])
+
+print(months)
+print(total)
+print(average)
+print(max_val_change)
+print(min_val_change)
+print(max_val_change_date)
+print(min_val_change_date)
+
+"""
+output = (
+    f"\nFinancial Analysis\n"
+    f"------------------------------\n"
+    f"Total month: {months}\n"
+    f"Total: ${total}\n"
+    f"Average Change: ${average}\n"
+    f"Greatest Increase in Profits: Month-year ($amount) {greatest_increase}\n"
+    f"Greatest Decrease in Profits: Month-year ($amount)\n"
+)
+print(output)
+
+with open(file_to_output, "w", as datafile"""
