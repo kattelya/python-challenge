@@ -27,7 +27,8 @@ with open(file_to_load) as budget_data:
     total = sum(total_value)
 
 #I have something similar in mind but struggling to write the code. Once I saw this code at "http://stackoverflow.com/questions/46965192/python-how-can-i-find-difference-between-two-rows-of-same-column-using-loop-in" it helps a lot. This chunk of code loop through the entire length specificly on total_value list and manipulate using their index in order to perform our computation
-    for i in range(1, len(total_value)):
+# pynative.com/python-range-function/ also explain why we use 1 as default value to find difference between (i to i - #) 
+    for i in range (1, len(total_value)):
         avg_change.append(total_value[i] - total_value[i-1])
         average = round((sum(avg_change) / len(avg_change)), 2)
         max_val_change = max(avg_change)
