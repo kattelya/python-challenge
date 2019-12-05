@@ -26,7 +26,7 @@ with open(file_to_load) as budget_data:
     total_value = [int(i)for i in total_value]
     total = sum(total_value)
 
-# Loop through the entire length specificly on total_revenue and manipulate using their index in order to perform a fast computation - stackoverflow 
+#I have something similar in mind but struggling to write the code. Once I saw this code at "http://stackoverflow.com/questions/46965192/python-how-can-i-find-difference-between-two-rows-of-same-column-using-loop-in" it helps a lot. This chunk of code loop through the entire length specificly on total_value list and manipulate using their index in order to perform our computation
     for i in range(1, len(total_value)):
         avg_change.append(total_value[i] - total_value[i-1])
         average = round((sum(avg_change) / len(avg_change)), 2)
@@ -37,6 +37,7 @@ with open(file_to_load) as budget_data:
     max_val_change_date = str(months_total[avg_change.index(max(avg_change))])
     min_val_change_date = str(months_total[avg_change.index(min(avg_change))])
 
+#use PyParagraph class exercise as a reference to write this convenient codes + write to txt file 
 output = (
     f"\nFinancial Analysis\n"
     f"------------------------------\n"
