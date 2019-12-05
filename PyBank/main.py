@@ -1,5 +1,3 @@
-"""PyBank Homework Solution."""
-
 #import required packages 
 import csv 
 import os 
@@ -18,13 +16,13 @@ with open(file_to_load) as budget_data:
     reader = csv.reader(budget_data, delimiter =",")
     header = next(reader)
 
-#Loop through each row, re-grab each filed and store in a new list - class discussion
+#Loop through each row, re-grab each data and store in a new list - similar to example in PyBoss / Paragraph exercise
     for row in reader:
         months_total.append(row[0])
         total_value.append(row[1])
     #how many months the report hold use len function to find the length of the list
     months = len(months_total)
-    #since the list that we copy is a string, need to convert string to an integer before we can perform any calculations.
+    #since the list that we copy is a string, need to convert string to an integer before we can perform any calculations. 
     total_value = [int(i)for i in total_value]
     total = sum(total_value)
 
@@ -47,16 +45,13 @@ print(min_val_change)
 print(max_val_change_date)
 print(min_val_change_date)
 
-"""
 output = (
     f"\nFinancial Analysis\n"
     f"------------------------------\n"
     f"Total month: {months}\n"
     f"Total: ${total}\n"
     f"Average Change: ${average}\n"
-    f"Greatest Increase in Profits: Month-year ($amount) {greatest_increase}\n"
-    f"Greatest Decrease in Profits: Month-year ($amount)\n"
+    f"Greatest Increase in Profits: {max_val_change_date} ($ {max_val_change})\n"
+    f"Greatest Decrease in Profits: {min_val_change_date} (${min_val_change})\n"
 )
 print(output)
-
-with open(file_to_output, "w", as datafile"""
