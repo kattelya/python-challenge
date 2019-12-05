@@ -24,9 +24,9 @@ with open(file_to_load) as election_data:
     #use len function on our list to find
     total_voters = len(voterID)
 
-    """#using set to know how many counties and candidates actually are in our data. -geeksforgeeks.org (list and set) below 2 lines code is not necessary for this project, but include as future reference if we want to find destinct value on an even larger data set.
-    distinct_counties = list(set(counties))
-    distinct_candidate = list(set(candidates))"""
+#using set to know how many counties and candidates actually are in our data. -geeksforgeeks.org (list and set) below 2 lines code is not necessary for this project, but include as future reference if we want to find destinct value on an even larger data set. 
+# distinct_counties = list(set(counties))
+# distinct_candidate = list(set(candidates))"""
 
     #use .count method to find each candidate total vote and convert -- "stackoverflow.com/questions/14540143/python-3-float-decimal-points-precision" = learn from this website to format the percent result" 
     # #to find the percentage - each candidate total votes divided by total number votes (total_voters)
@@ -46,6 +46,7 @@ with open(file_to_load) as election_data:
     otooley = float(otooley_total / total_voters) * 100
     otooley_percent = "{:.3f}".format(otooley)    
 
+#use PyParagraph class exercise as a reference to write this convenient codes + write to txt file 
 output = (
     f"\nElection Results\n"
     f"------------------------\n"
