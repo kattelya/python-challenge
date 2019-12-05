@@ -25,9 +25,10 @@ with open(file_to_load) as election_data:
     total_voters = len(voterID)
 
 #using set to know how many counties and candidates actually are in our data. 
-# -geeksforgeeks.org (list and set) below 2 lines code is not necessary for this project, but include as future reference if we want to find destinct value on an even larger data set. 
+# -geeksforgeeks.org (list and set) below 2 lines code is not necessary for this project, 
+# but include as future reference if we want to find destinct value on an even larger data set. 
 # distinct_counties = list(set(counties))
-# distinct_candidate = list(set(candidates))"""
+# distinct_candidate = list(set(candidates))
 
     #use .count method to find each candidate total vote 
     #use geeksforgeeks.org/python-format-function/
