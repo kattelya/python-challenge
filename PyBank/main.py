@@ -23,7 +23,7 @@ with open(file_to_load) as budget_data:
     #use len function to find the length of the list = to total months in our report.
     months = len(months_total)
     #since the list that we copy is a string, need to convert string to an integer before we can perform any calculations. 
-    total_value = [int(i)for i in total_value]
+    total_value = [int(i) for i in total_value]
     total = sum(total_value)
 
 #I have something similar in mind but struggling to write the code. Once I saw this code at "http://stackoverflow.com/questions/46965192/python-how-can-i-find-difference-between-two-rows-of-same-column-using-loop-in" it helps a lot. This chunk of code loop through the entire length specificly on total_value list and manipulate using their index in order to perform our computation
