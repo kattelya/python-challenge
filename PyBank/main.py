@@ -37,14 +37,6 @@ with open(file_to_load) as budget_data:
     max_val_change_date = str(months_total[avg_change.index(max(avg_change))])
     min_val_change_date = str(months_total[avg_change.index(min(avg_change))])
 
-print(months)
-print(total)
-print(average)
-print(max_val_change)
-print(min_val_change)
-print(max_val_change_date)
-print(min_val_change_date)
-
 output = (
     f"\nFinancial Analysis\n"
     f"------------------------------\n"
@@ -55,3 +47,6 @@ output = (
     f"Greatest Decrease in Profits: {min_val_change_date} (${min_val_change})\n"
 )
 print(output)
+
+with open(file_to_output, "w") as txt_file:
+    txt_file.write(output)
