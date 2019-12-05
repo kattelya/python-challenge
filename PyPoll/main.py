@@ -21,7 +21,7 @@ with open(file_to_load) as election_data:
         voterID.append(row[0])
         counties.append(row[1])
         candidates.append(row[2])
-    #use len function on our list to find
+    #use len function on our list to find total_voters in our data
     total_voters = len(voterID)
 
 #using set to know how many counties and candidates actually are in our data. -geeksforgeeks.org (list and set) below 2 lines code is not necessary for this project, but include as future reference if we want to find destinct value on an even larger data set. 
