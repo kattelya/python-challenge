@@ -44,7 +44,7 @@ output = (
     f"Total month: {months}\n"
     f"Total: ${total}\n"
     f"Average Change: ${average}\n"
-    f"Greatest Increase in Profits: {max_val_change_date} ($ {max_val_change})\n"
+    f"Greatest Increase in Profits: {max_val_change_date} (${max_val_change})\n"
     f"Greatest Decrease in Profits: {min_val_change_date} (${min_val_change})\n"
 )
 print(output)
