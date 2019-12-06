@@ -35,8 +35,8 @@ with open(file_to_load) as budget_data:
         min_val_change = min(avg_change)
 
 # to read from months_total list using the .index build in function in python and with specific value that match max or min - concept taken from geeksforgeeks    
-    max_val_change_date = str(months_total[avg_change.index(max_val_change)])
-    min_val_change_date = str(months_total[avg_change.index(min_val_change)])
+    max_val_change_date = months_total[total_value.index(max(total_value))]
+    min_val_change_date = months_total[total_value.index(min(total_value))]
 
 #use PyParagraph class exercise as a reference to write this convenient codes + write to txt file 
 output = (
